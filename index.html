@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Time Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <h2>Smart Time Management</h2>
+            <ul>
+                <li onclick="showSection('categories')">Categories</li>
+                <li onclick="showSection('todo')">To-Do List</li>
+                <li onclick="showSection('schedule')">Schedules</li>
+                <li onclick="showSection('planning')">Planning</li>
+                <li onclick="showSection('tips')">Time-Saving Tips</li>
+                <li onclick="showSection('reminders')">Reminders</li>
+                <li onclick="showSection('statistics')">Statistics</li>
+            </ul>
+            <img src="your-image.jpg" alt="Bottom Image" class="sidebar-image">
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Display Current Day -->
+            <h1 id="current-day"></h1>
+
+            <section id="categories" class="section">
+                <h1>Categories</h1>
+                <p>Enter the time spent on each category (in hours) and save to update statistics.</p>
+                
+                <div id="category-list" class="category-list">
+                    <label>Shopping: <input type="number" class="category-input" data-category="Shopping" min="0"></label>
+                    <label>Cooking: <input type="number" class="category-input" data-category="Cooking" min="0"></label>
+                    <label>Laundry: <input type="number" class="category-input" data-category="Laundry" min="0"></label>
+                    <label>Cleaning: <input type="number" class="category-input" data-category="Cleaning" min="0"></label>
+                    <label>Movies: <input type="number" class="category-input" data-category="Movies" min="0"></label>
+                    <label>Hangout with Friends: <input type="number" class="category-input" data-category="Hangout with Friends" min="0"></label>
+                    <label>Games: <input type="number" class="category-input" data-category="Games" min="0"></label>
+                    <label>Social Media: <input type="number" class="category-input" data-category="Social Media" min="0"></label>
+                    <label>Work: <input type="number" class="category-input" data-category="Work" min="0"></label>
+                </div>
+
+                <!-- Add New Category -->
+                <input type="text" id="new-category" placeholder="New Category">
+                <button onclick="addCategory()">Add Category</button>
+                
+                <!-- Save Data Button -->
+                <button onclick="saveCategoryData()">Save Data</button>
+                <button onclick="clearCategoryData()">Clear Data</button>
+            </section>
+
+            <!-- Other sections like To-Do List, Schedule, etc., remain as they are. -->
+
+            <!-- Statistics Section -->
+            <section id="statistics" class="section hidden">
+                <h1>Statistics</h1>
+                <canvas id="statsChart" width="300" height="300"></canvas>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
